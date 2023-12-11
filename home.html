@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <link rel="stylesheet" href="home.css">
+
+    </head>
+    <body>
+           
+ <!--barra de navegação com botão de pesquisa-->
+ <!--ps: nome não oficial e função Js sem funcionar, este h1 deve ir para o centro da tela -->
+
+      <!-- <h1><center>BEM-VINDO AO MUSICPLAN</center> </h1> -->
+
+    <nav class="navbar">
+        <div class="navbar-content">
+            <div class="logo-container">
+                <img src="img/img1.jpeg" alt="" class="logo">
+            </div>
+            <div class="telas">
+                <ul>
+                    <li><a href="#">Músicas</a></li>
+                    <li><a href="#">coleções</a></li>
+                    <li><a href="#">favoritos</a></li>
+                </ul>
+            </div>
+            <div class="search-conta">
+                <input type="text" placeholder="Pesquisar" class="search-input">
+            </div>
+        </div>
+    </nav>
+    <h1><center>BEM-VINDO AO BIT'S</center> </h1>
+    
+    <!--Carrossel unico infinito de video -->
+
+    <div id="videoCarousel">
+        <video autoplay muted loop>
+            <source src="./img/video.mp4" type="video/mp4">
+            Seu navegador não suporta a tag de vídeo.
+        </video>
+    </div>
+
+<main>
+    
+    <!--cards para não surtar e manter organizado. Ps: lembrar de acrescentar uma barra de rolagem futuramente e um botão de play na reprodução.-->
+
+    <h2>Mais Tocadas</h2>
+    <div class="Mais-Tocadas-grid">
+        <div class="card">
+            <img src="img/montagem.jpeg" alt="Música 1">
+            <button>Letra</button>
+            <button>Reproduzir</button>
+        </div>
+
+        <div class="card">
+            <img src="img/anjo.jpeg" alt="Música 2">
+            <button>Letra</button>
+            <button>Reproduzir</button>
+        </div>
+
+        <div class="card">
+            <img src="img/fav.jpeg" alt="Música 3">
+            <button>Letra</button>
+            <button>Reproduzir</button>
+        </div>
+     </div>
+
+     <!--cards de Músicas-->
+
+    <h2>Músicas</h2>
+    <div class="music-grid">
+        <div class="card">
+            <img src="img/disco.jpeg" alt="Música 1">
+            <button>Letra</button>
+            <button>Reproduzir</button>
+        </div>
+
+        <div class="card">
+            <img src="img/img2.jpeg" alt="Música 2">
+            <button>Letra</button>
+            <button>Reproduzir</button>
+
+        </div>
+
+        <div class="card">
+            <img src="img/music.jpeg" alt="Música 3">
+            <button>Letra</button>
+            <button>Reproduzir</button>
+
+        </div>
+         
+    </div>
+
+    <!--Card de Coleções-->
+
+    <h2>Coleções</h2>
+    <div class="collection-grid">
+        <div class="card">
+            <img src="img/copas.jpeg" alt="Coleção 1">
+            <button>Ver Coleção</button>
+        </div>
+
+        <div class="card">
+            <img src="img/fav.jpeg" alt="Coleção 2">
+            <button>Ver Coleção</button>
+        </div>
+         
+        <div class="card">
+            <img src="img/img1.jpeg" alt="Coleção 3">
+            <button>Ver Coleção</button>
+        </div>
+        
+    </div>
+</main>
+
+
+<footer>
+    <a href="#">Sobre</a> 
+    <a href="#">Termos de Uso</a> 
+    <a href="#">Redes Sociais</a>
+         
+    </body>
+
+    
