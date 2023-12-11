@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    *{
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: url('https://multarte.com.br/wp-content/uploads/2018/12/fundo-roxo-escuro19.png') no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .container-cadastro {
+      display: flex;
+      background: transparent;
+      color: #fff;
+      border-radius: 10px;
+      padding: 30px 40px;
+    }
+
+    .form {
+      flex-grow: 1;
+    }
+
+    h2 {
+      font-size: 36px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .input-flutuante {
+      position: relative;
+      width: 100%;
+      height: 50px;
+      margin: 30px 0;
+    }
+
+    .input-flutuante input {
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      border: none;
+      outline: none;
+      border: 2px solid rgba(255, 255, 255, .2);
+      border-radius: 40px;
+      color: #fff;
+      padding: 20px 45px 20px 20px;
+    }
+
+    .input-flutuante input::placeholder {
+      color: #fff;
+    }
+
+    .input-flutuante label {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 20px;
+      pointer-events: none;
+      transition: all 0.3s ease-in-out;
+      font-size: 16px;
+      color: rgba(255, 255, 255, .5);
+    }
+
+    .input-flutuante input:focus + label,
+    .input-flutuante input:not(:placeholder-shown) + label {
+      top: 0;
+      font-size: 12px;
+    }
+
+    .button {
+      width: 100%;
+      height: 45px;
+      background: #fff;
+      border: none;
+      outline: none;
+      border-radius: 40px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+      cursor: pointer;
+      font-size: 16px;
+      color: #333;
+      font-weight: 600;
+      margin-top: 20px;
+    }
+
+    .register {
+      font-size: 14px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .register a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .register a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-cadastro">
+    <form class="form">
+      <h2>Cadastro</h2>
+      <div class="input-flutuante">
+        <input type="text" id="nome" placeholder=""/>
+        <label for="nome">Digite nome de Usuário</label>
+      </div>
+
+      <div class="input-flutuante">
+        <input type="text" id="email" placeholder=""/>
+        <label for="email">Email</label>
+        <span class="error" id="emailError"></span>
+      </div>
+
+      <div class="input-flutuante">
+        <input type="password" id="senha" placeholder=""/>
+        <label for="senha">Senha</label>
+        <span class="error" id="senhaError"></span>
+      </div>
+
+      <input type="submit" value="Cadastrar" class="button"/>
+      <div class="register">
+        Já tem uma conta? <a href="home.html">Entrar</a>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    const form = document.querySelector('.form');
+    const emailInput = document.querySelector('#email');
+    const senhaInput = document.querySelector('#senha');
+    const emailError = document.querySelector('#emailError');
+    const senhaError = document.querySelector('#senhaError');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const isValidEmail = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/.test(emailInput.value.trim());
+      if (!isValidEmail) {
+        emailError.textContent = 'Email inválido';
+        emailError.style.display = 'block';
+      } else {
+        emailError.style.display = 'none';
+      }
+      const isValidSenha = /^(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/.test(senhaInput.value.trim());
+      if (!isValidSenha) {
+        senhaError.textContent = 'A senha deve conter pelo menos um número e uma letra maiúscula';
+        senhaError.style.display = 'block';
+      } else {
+        senhaError.style.display = 'none';
+      }
+      if (isValidEmail && isValidSenha) {
+        form.submit();
+      }
+    });
+  </script>
+  
+  <audio autoplay loop>
+    <source src="./caly.mp3" type="audio/mp3">
+  </audio>
+</body>
+</html>
